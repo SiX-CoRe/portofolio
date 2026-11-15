@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#09090f">
+  <meta name="author" content="LumnzTyz">
+  <meta name="description" content="LumnzTyz adalah portofolio pribadi Luqman Arifin, pelajar dan kreator digital yang mengeksplorasi desain grafis, UI/UX, pengembangan website, dan teknologi. Lihat profil, karya, serta proyek LumnzTyz.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:type" content="profile">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="LumnzTyz">
+  <meta property="og:title" content="LumnzTyz — Portofolio Luqman Arifin">
+  <meta property="og:description" content="Portofolio resmi LumnzTyz: profil, desain, pengembangan website, proyek digital, dan eksplorasi teknologi.">
+  <meta property="og:image" content="assets/profile.png">
+  <meta property="og:image:alt" content="Foto profil LumnzTyz">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LumnzTyz — Portofolio Luqman Arifin">
+  <meta name="twitter:description" content="Profil dan karya digital LumnzTyz dalam bidang desain dan teknologi.">
+  <meta name="twitter:image" content="assets/profile.png">
+  <title>LumnzTyz — Portofolio Resmi Luqman Arifin | Desain & Teknologi</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "#lumnztyz",
+    "name": "Luqman Arifin",
+    "alternateName": "LumnzTyz",
+    "description": "LumnzTyz adalah kreator digital dan pelajar yang tertarik pada desain komunikasi visual, desain grafis, UI/UX, pengembangan website, dan teknologi.",
+    "image": "assets/profile.png",
+    "url": "./",
+    "knowsAbout": [
+      "Desain Komunikasi Visual",
+      "Desain Grafis",
+      "UI/UX Design",
+      "Web Development",
+      "JavaScript",
+      "Teknologi Digital"
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #09090f;
+      --panel: #11111b;
+      --panel-2: #151522;
+      --text: #f4f1ff;
+      --muted: #a5a1b5;
+      --purple: #a879ff;
+      --purple-2: #7546df;
+      --line: rgba(255,255,255,.09);
+      --glow: 0 0 55px rgba(151, 93, 255, .17);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      background:
+        radial-gradient(circle at 80% 8%, rgba(119,72,205,.14), transparent 27rem),
+        radial-gradient(circle at 5% 45%, rgba(89,58,164,.10), transparent 25rem),
+        var(--bg);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .container { width: min(1120px, calc(100% - 44px)); margin: auto; }
+    .section { padding: 105px 0; }
+    .eyebrow {
+      color: var(--purple); text-transform: uppercase; letter-spacing: .2em;
+      font-size: .74rem; font-weight: 700; margin-bottom: 12px;
+    }
+    .section-heading { font: 700 clamp(2rem, 4vw, 3rem)/1.15 "Space Grotesk", sans-serif; letter-spacing: -.045em; }
+    .section-desc { color: var(--muted); max-width: 610px; margin-top: 15px; }
+    .gradient {
+      background: linear-gradient(110deg, #fff 5%, #c6a8ff 48%, #8b5cf6 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+
+    /* Navigation */
+    .navbar {
+      position: fixed; z-index: 50; inset: 0 0 auto; height: 76px;
+      border-bottom: 1px solid transparent; transition: .25s ease;
+    }
+    .navbar.scrolled { background: rgba(9,9,15,.82); border-color: var(--line); backdrop-filter: blur(18px); }
+    .nav-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .brand { font: 700 1.3rem "Space Grotesk", sans-serif; letter-spacing: -.06em; }
+    .brand span { color: var(--purple); }
+    .nav-links { display: flex; align-items: center; gap: 30px; list-style: none; }
+    .nav-links a { color: #c7c2d5; font-size: .9rem; transition: .2s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta { border: 1px solid rgba(168,121,255,.5); padding: 9px 16px; border-radius: 999px; color: #e6d9ff !important; }
+    .menu-btn { display: none; border: 1px solid var(--line); background: var(--panel); color: white; border-radius: 10px; padding: 8px 11px; cursor: pointer; }
+
+    /* Hero */
+    .hero { min-height: 100vh; display: grid; align-items: center; padding: 130px 0 75px; position: relative; }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; align-items: center; gap: 65px; }
+    .availability { display: inline-flex; align-items: center; gap: 9px; padding: 7px 13px; border: 1px solid var(--line); border-radius: 999px; color: #d1cbdc; font-size: .78rem; margin-bottom: 25px; background: rgba(255,255,255,.025); }
+    .availability i { width: 7px; height: 7px; border-radius: 50%; background: #8ee6b0; box-shadow: 0 0 12px #8ee6b0; }
+    h1 { font: 700 clamp(3.5rem, 9vw, 7rem)/.98 "Space Grotesk", sans-serif; letter-spacing: -.075em; }
+    .hero-subtitle { color: #d0cadc; font-size: clamp(1rem, 2vw, 1.2rem); margin-top: 24px; max-width: 580px; }
+    .hero-copy { color: var(--muted); max-width: 550px; margin-top: 12px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 32px; }
+    .btn { display: inline-flex; justify-content: center; align-items: center; gap: 9px; padding: 12px 19px; border-radius: 12px; font-weight: 700; font-size: .9rem; transition: .25s; border: 1px solid var(--line); }
+    .btn-primary { background: linear-gradient(110deg, var(--purple-2), #a16bff); border-color: transparent; color: white; box-shadow: 0 10px 30px rgba(117,70,223,.22); }
+    .btn-secondary { background: rgba(255,255,255,.035); color: #eee9f8; }
+    .btn:hover { transform: translateY(-3px); }
+    .hero-visual { display: flex; justify-content: center; position: relative; }
+    .portrait-frame {
+      width: min(350px, 78vw); aspect-ratio: 4 / 5; padding: 10px;
+      border: 1px solid rgba(186,151,255,.35); border-radius: 30px;
+      background: linear-gradient(145deg, rgba(168,121,255,.22), rgba(255,255,255,.025));
+      box-shadow: var(--glow); transform: rotate(2deg); position: relative;
+    }
+    .portrait-frame::before { content: ""; position: absolute; inset: 17px -17px -17px 17px; border: 1px solid rgba(168,121,255,.2); border-radius: 30px; z-index: -1; }
+    .portrait-frame img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center 38%; border-radius: 22px; filter: saturate(.88); }
+    .portrait-label { position: absolute; bottom: 24px; left: -25px; background: rgba(17,17,27,.9); border: 1px solid var(--line); backdrop-filter: blur(12px); padding: 12px 16px; border-radius: 13px; transform: rotate(-2deg); }
+    .portrait-label strong { display: block; font: 700 1rem "Space Grotesk"; }
+    .portrait-label span { color: var(--muted); font-size: .75rem; }
+
+    /* About */
+    .about-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: 55px; align-items: center; }
+    .about-image { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); background: var(--panel); aspect-ratio: 4/5; }
+    .about-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 38%; display: block; }
+    .about-text p { color: var(--muted); margin-top: 18px; }
+    .facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 27px; }
+    .fact { padding: 15px; border: 1px solid var(--line); background: rgba(255,255,255,.025); border-radius: 13px; }
+    .fact small { color: var(--muted); display: block; font-size: .75rem; }
+    .fact strong { font-size: .92rem; }
+
+    /* Skills */
+    .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 38px; }
+    .skill { background: var(--panel); border: 1px solid var(--line); padding: 22px; border-radius: 17px; transition: .25s; }
+    .skill:hover, .project:hover { transform: translateY(-5px); border-color: rgba(168,121,255,.4); box-shadow: var(--glow); }
+    .skill-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px; color: #d9c5ff; background: rgba(168,121,255,.13); font-size: 1.15rem; margin-bottom: 15px; }
+    .skill h3 { font: 600 1rem "Space Grotesk"; }
+    .skill p { color: var(--muted); font-size: .82rem; margin-top: 5px; }
+
+    /* Projects */
+    .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 38px; }
+    .project { padding: 25px; border-radius: 19px; background: linear-gradient(145deg, #151522, #101019); border: 1px solid var(--line); transition: .25s; display: flex; flex-direction: column; min-height: 255px; }
+    .project-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 25px; }
+    .project-mark { width: 45px; height: 45px; border-radius: 13px; display: grid; place-items: center; background: rgba(168,121,255,.13); color: #d7c0ff; font: 700 1rem "Space Grotesk"; }
+    .project-type { color: var(--muted); font-size: .75rem; }
+    .project h3 { font: 700 1.25rem "Space Grotesk"; }
+    .project p { color: var(--muted); font-size: .88rem; margin-top: 8px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; }
+    .tag { color: #cfc2e8; border: 1px solid rgba(168,121,255,.18); background: rgba(168,121,255,.07); padding: 4px 9px; border-radius: 999px; font-size: .7rem; }
+    .project-link { margin-top: auto; padding-top: 22px; display: inline-flex; align-items: center; gap: 8px; color: #c7aaff; font-size: .86rem; font-weight: 700; width: fit-content; }
+    .project-link:hover { color: white; }
+    .project-link.disabled { color: #858093; cursor: default; }
+
+    /* Journey */
+    .timeline { margin-top: 38px; border-left: 1px solid rgba(168,121,255,.4); padding-left: 27px; display: grid; gap: 27px; max-width: 760px; }
+    .timeline-item { position: relative; }
+    .timeline-item::before { content: ""; position: absolute; left: -33px; top: 8px; width: 11px; height: 11px; border-radius: 50%; background: var(--purple); box-shadow: 0 0 15px rgba(168,121,255,.7); }
+    .timeline-item small { color: var(--purple); font-weight: 700; }
+    .timeline-item h3 { font: 600 1.08rem "Space Grotesk"; margin-top: 3px; }
+    .timeline-item p { color: var(--muted); font-size: .9rem; margin-top: 5px; }
+
+    /* Contact / Footer */
+    .contact-card { border: 1px solid rgba(168,121,255,.23); border-radius: 25px; padding: clamp(28px, 6vw, 60px); background: radial-gradient(circle at 90% 0%, rgba(133,82,220,.2), transparent 40%), var(--panel); text-align: center; box-shadow: var(--glow); }
+    .contact-card .section-desc { margin: 15px auto 0; }
+    .contact-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    footer { padding: 28px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .8rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+    .footer-inner strong { color: #e9e1f8; }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } .reveal { opacity: 1; transform: none; } }
+
+    @media (max-width: 850px) {
+      .hero-grid { grid-template-columns: 1fr .75fr; gap: 30px; }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { gap: 30px; }
+    }
+    @media (max-width: 650px) {
+      .container { width: min(100% - 34px, 520px); }
+      .section { padding: 78px 0; }
+      .navbar { height: 68px; }
+      .menu-btn { display: block; }
+      .nav-links { display: none; position: absolute; top: 68px; left: 17px; right: 17px; padding: 18px; border: 1px solid var(--line); border-radius: 16px; background: rgba(17,17,27,.97); flex-direction: column; align-items: stretch; gap: 15px; }
+      .nav-links.open { display: flex; }
+      .nav-links a { display: block; padding: 5px; }
+      .hero { min-height: auto; padding: 125px 0 75px; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-visual { grid-row: 1; margin: 0 0 18px; }
+      .portrait-frame { width: min(245px, 70vw); }
+      .hero-content { text-align: center; }
+      .hero-copy, .hero-subtitle { margin-left: auto; margin-right: auto; }
+      .hero-actions { justify-content: center; }
+      h1 { font-size: clamp(3.5rem, 18vw, 5.3rem); }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-image { max-width: 310px; margin: auto; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .skills-grid { gap: 11px; }
+      .skill { padding: 17px; }
+      .footer-inner { justify-content: center; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="#home">LUMNZ<span>TYZ</span>.</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Buka navigasi" aria-expanded="false">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Beranda</a></li>
+        <li><a href="#about">Tentang</a></li>
+        <li><a href="#skills">Keahlian</a></li>
+        <li><a href="#projects">Proyek</a></li>
+        <li><a class="nav-cta" href="#contact">Hubungi Saya ↗</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="availability"><i></i> Pelajar · Kreator Digital</div>
+          <h1><span class="gradient">LumnzTyz</span></h1>
+          <p class="hero-subtitle">Mengeksplorasi kreativitas melalui <span class="gradient">desain dan teknologi.</span></p>
+          <p class="hero-copy">Selamat datang di ruang digital saya. Tempat untuk berbagi karya, eksperimen, dan berbagai ide yang terus berkembang.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">Lihat Proyek <span>↗</span></a>
+            <a class="btn btn-secondary" href="#about">Kenali Saya</a>
+          </div>
+        </div>
+        <div class="hero-visual reveal">
+          <div class="portrait-frame">
+            <img src="assets/profile.png" alt="Foto profil LumnzTyz">
+            <div class="portrait-label"><strong>LumnzTyz</strong><span>Designer & Web Enthusiast</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-image reveal"><img src="assets/profile.png" alt="Foto LumnzTyz"></div>
+        <div class="about-text reveal">
+          <div class="eyebrow">Tentang Saya</div>
+          <h2 class="section-heading">Mengenal lebih dekat <span class="gradient">LumnzTyz.</span></h2>
+          <p>LumnzTyz, dikenal juga sebagai Luqman Arifin, merupakan pelajar dan kreator digital yang memiliki ketertarikan pada Desain Komunikasi Visual dan teknologi digital. Saya senang mempelajari hal baru, mengembangkan website, membuat desain, serta mencoba berbagai ide kreatif.</p>
+          <p>Dalam proses belajar, saya percaya bahwa setiap eksperimen adalah kesempatan untuk berkembang. Saya juga membangun proyek digital dan komunitas sebagai ruang untuk berkolaborasi, berbagi, serta mengembangkan kemampuan.</p>
+          <div class="facts">
+            <div class="fact"><small>Nama</small><strong>Luqman Arifin</strong></div>
+            <div class="fact"><small>Nama Kreator</small><strong>LumnzTyz</strong></div>
+            <div class="fact"><small>Bidang</small><strong>DKV & Teknologi</strong></div>
+            <div class="fact"><small>Fokus</small><strong>Desain dan Web</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+<section class="section" id="skills">
+  <div class="container">
+
+    <div class="reveal">
+      <div class="eyebrow">Skills & Technologies</div>
+      <h2 class="section-heading">
+        Tools yang Saya <span class="gradient">Gunakan.</span>
+      </h2>
+      <p class="section-desc">
+        Berbagai teknologi, tools, dan software yang saya pelajari
+        serta gunakan untuk mengembangkan proyek digital,
+        membangun website, membuat desain, dan mengeksplorasi teknologi.
+      </p>
+    </div>
+
+    <div class="skills-grid">
+
+      <!-- DESIGN -->
+      <article class="skill-card reveal">
+        <div class="skill-card-header">
+          <div class="skill-icon">✦</div>
+          <span class="skill-number">01</span>
+        </div>
+        <h3>Design & Creative</h3>
+        <p>
+          Membuat desain visual, mengolah ide kreatif,
+          dan merancang tampilan digital.
+        </p>
+        <div class="skill-tags">
+          <span>Canva</span>
+          <span>CorelDRAW</span>
+          <span>PixelLab</span>
+          <span>UI Design</span>
+          <span>Graphic Design</span>
+          <span>Typography</span>
+        </div>
+      </article>
+
+      <!-- FRONTEND -->
+      <article class="skill-card reveal">
+        <div class="skill-card-header">
+          <div class="skill-icon">&lt;/&gt;</div>
+          <span class="skill-number">02</span>
+        </div>
+        <h3>Frontend Development</h3>
+        <p>
+          Membangun tampilan website yang responsif,
+          interaktif, dan nyaman digunakan.
+        </p>
+        <div class="skill-tags">
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>JavaScript</span>
+          <span>Responsive Design</span>
+          <span>UI/UX</span>
+          <span>SEO Basics</span>
+        </div>
+      </article>
+
+      <!-- BACKEND -->
+      <article class="skill-card reveal">
+        <div class="skill-card-header">
+          <div class="skill-icon">⌘</div>
+          <span class="skill-number">03</span>
+        </div>
+        <h3>Backend Development</h3>
+        <p>
+          Mengembangkan sistem backend, mengelola data,
+          dan menghubungkan aplikasi dengan layanan API.
+        </p>
+        <div class="skill-tags">
+          <span>Node.js</span>
+          <span>Express.js</span>
+          <span>REST API</span>
+          <span>Axios</span>
+          <span>JSON</span>
+          <span>MySQL</span>
+        </div>
+      </article>
+
+      <!-- BOT -->
+      <article class="skill-card reveal">
+        <div class="skill-card-header">
+          <div class="skill-icon">◈</div>
+          <span class="skill-number">04</span>
+        </div>
+        <h3>Bot Development</h3>
+        <p>
+          Mengeksplorasi pembuatan bot, integrasi API,
+          dan otomatisasi berbagai fitur.
+        </p>
+        <div class="skill-tags">
+          <span>WhatsApp Bot</span>
+          <span>Baileys</span>
+          <span>Telegraf</span>
+          <span>Telegram Bot</span>
+          <span>Automation</span>
+          <span>Webhook</span>
+        </div>
+      </article>
+
+      <!-- DATABASE -->
+      <article class="skill-card reveal">
+        <div class="skill-card-header">
+          <div class="skill-icon">▤</div>
+          <span class="skill-number">05</span>
+        </div>
+        <h3>Database & Data</h3>
+        <p>
+          Mengelola penyimpanan data dan menghubungkan
+          database dengan aplikasi.
+        </p>
+        <div class="skill-tags">
+          <span>MySQL</span>
+          <span>JSON Database</span>
+          <span>CRUD</span>
+          <span>Data Management</span>
+        </div>
+      </article>
+
+      <!-- TOOLS -->
+      <article class="skill-card reveal">
+        <div class="skill-card-header">
+          <div class="skill-icon">⌘</div>
+          <span class="skill-number">06</span>
+        </div>
+        <h3>Development Tools</h3>
+        <p>
+          Menggunakan berbagai tools untuk menulis kode,
+          mengelola proyek, dan kolaborasi.
+        </p>
+        <div class="skill-tags">
+          <span>Git</span>
+          <span>GitHub</span>
+          <span>VS Code</span>
+          <span>Termux</span>
+          <span>npm</span>
+          <span>Postman</span>
+        </div>
+      </article>
+
+      <!-- SERVER -->
+      <article class="skill-card reveal">
+        <div class="skill-card-header">
+          <div class="skill-icon">⌁</div>
+          <span class="skill-number">07</span>
+        </div>
+        <h3>Server & Deployment</h3>
+        <p>
+          Mengelola lingkungan server, menjalankan aplikasi,
+          dan melakukan deployment proyek.
+        </p>
+        <div class="skill-tags">
+          <span>Linux</span>
+          <span>VPS</span>
+          <span>Pterodactyl</span>
+          <span>PM2</span>
+          <span>Vercel</span>
+          <span>cPanel</span>
+        </div>
+      </article>
+
+      <!-- OTHER -->
+      <article class="skill-card reveal">
+        <div class="skill-card-header">
+          <div class="skill-icon">✧</div>
+          <span class="skill-number">08</span>
+        </div>
+        <h3>Other Interests</h3>
+        <p>
+          Mengeksplorasi teknologi baru dan mengembangkan
+          kemampuan melalui eksperimen proyek.
+        </p>
+        <div class="skill-tags">
+          <span>Android Development</span>
+          <span>API Integration</span>
+          <span>Website Optimization</span>
+          <span>Problem Solving</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="reveal">
+          <div class="eyebrow">Karya Pilihan</div>
+          <h2 class="section-heading">Proyek yang <span class="gradient">Saya Bangun.</span></h2>
+          <p class="section-desc">Beberapa eksperimen dan proyek digital yang menjadi bagian dari perjalanan belajar saya. Pilih tautan untuk melihat proyek secara langsung.</p>
+        </div>
+        <div class="projects-grid">
+          <article class="project reveal">
+            <div class="project-top"><div class="project-mark">LD</div><span class="project-type">Website · Tools</span></div>
+            <h3>Lyntharx Downloader</h3>
+            <p>Website downloader TikTok dengan antarmuka sederhana untuk membantu pengguna mengakses media yang tersedia.</p>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">API</span></div>
+            <a class="project-link" href="https://www.lyntharx-downloader.my.id/" target="_blank" rel="noopener noreferrer">Kunjungi Website ↗</a>
+          </article>
+          <article class="project reveal">
+            <div class="project-top"><div class="project-mark">SxC</div><span class="project-type">Open Source · Bot</span></div>
+            <h3>Six-Core Bot</h3>
+            <p>Eksplorasi pengembangan bot WhatsApp berbasis JavaScript dengan fitur dan utilitas yang terus dikembangkan.</p>
+            <div class="tags"><span class="tag">Node.js</span><span class="tag">Baileys</span><span class="tag">JavaScript</span></div>
+            <a class="project-link" href="https://github.com/SiX-CoRe/SxcWaMdV3" target="_blank" rel="noopener noreferrer">Lihat Repository ↗</a>
+          </article>
+          <article class="project reveal">
+            <div class="project-top"><div class="project-mark">KgB</div><span class="project-type">Open Source · Bot</span></div>
+            <h3>Kage Bot</h3>
+            <p>Eksplorasi pengembangan bot WhatsApp berbasis JavaScript dengan fitur dan utilitas yang terus dikembangkan.</p>
+            <div class="tags"><span class="tag">Node.Js</span><span class="tag">Baileys</span><span class="tag">JavaScript</span></div>
+            <a class="project-link" href="https://github.com/SiX-CoRe/kagebotv1" target="_blank" rel="noopener noreferrer">Buka Panel ↗</a>
+          </article>
+          <article class="project reveal">
+            <div class="project-top"><div class="project-mark">LTv</div><span class="project-type">Android · Application</span></div>
+            <h3>Lyntharx TV</h3>
+            <p>Proyek aplikasi Android yang dikembangkan sebagai bagian dari eksplorasi pembuatan produk digital.</p>
+            <div class="tags"><span class="tag">Android</span><span class="tag">Mobile UI</span><span class="tag">Development</span></div>
+            <a class="project-link" href="https://lyntharx-tv.vercel.app/">Tanyakan Proyek ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="journey">
+      <div class="container">
+        <div class="reveal">
+          <div class="eyebrow">Perjalanan</div>
+          <h2 class="section-heading">Proses yang terus <span class="gradient">berjalan.</span></h2>
+          <p class="section-desc">Setiap pengalaman menjadi bagian dari proses belajar dan membangun sesuatu yang lebih baik.</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item reveal"><small>2020</small><h3>Memulai SiX-CoRe Community</h3><p>Mulai membangun komunitas sebagai ruang untuk berbagi minat dan bereksperimen di dunia digital.</p></div>
+          <div class="timeline-item reveal"><small>Saat Ini</small><h3>Belajar Desain dan Teknologi</h3><p>Mengembangkan kemampuan di bidang Desain Komunikasi Visual, website, dan pengembangan aplikasi.</p></div>
+          <div class="timeline-item reveal"><small>Berikutnya</small><h3>Membangun Lebih Banyak Karya</h3><p>Terus mengeksplorasi ide, meningkatkan kualitas proyek, dan membuka kesempatan kolaborasi.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div class="eyebrow">Mari Terhubung</div>
+          <h2 class="section-heading">Punya ide atau ingin <span class="gradient">berkolaborasi?</span></h2>
+          <p class="section-desc">Saya terbuka untuk berdiskusi, bertukar ide, dan berkolaborasi dalam proyek kreatif maupun teknologi.</p>
+          <div class="contact-links">
+            <a class="btn btn-primary" href="https://Instagram.com/LumnzTyz" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+            <a class="btn btn-secondary" href="https://t.me/LumnzTyz" target="_blank" rel="noopener noreferrer">Telegram ↗</a>
+            <a class="btn btn-primary" href="https://github.com/SiX-CoRe" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a class="btn btn-secondary" href="https://www.lumnztyz.web.id/" target="_blank" rel="noopener noreferrer">Website ↗</a>
+            <a class="btn btn-secondary" href="mailto:">Kirim Email</a>
+          </div>
+          <p style="font-size:.76rem;color:var(--muted);margin-top:18px">Tambahkan alamat email atau tautan media sosial aktif pada bagian kontak sebelum dipublikasikan.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> <strong>LUMNZTYZ</strong>. Dibuat dengan semangat eksplorasi.</span>
+      <span>Design · Technology · Creativity</span>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById("navbar");
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    window.addEventListener("scroll", () => {
+      navbar.classList.toggle("scrolled", window.scrollY > 20);
+    });
+
+    menuBtn.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", String(isOpen));
+      menuBtn.textContent = isOpen ? "✕" : "☰";
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.textContent = "☰";
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(element => observer.observe(element));
+  </script>
+</body>
+</html>
